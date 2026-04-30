@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Réservation RO&OR</title>
+
+  <!-- Styles CSS pour la page de réservation -->
+  <style>
+    /* Design général de la page */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #d27325; /* Couleur de fond principale */
+      text-align: center;
+      padding: 50px;
+    }
+
+    /* Style du formulaire */
+    form {
+      background-color: #d74819; /* Couleur de fond du formulaire */
+      padding: 30px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Style des champs de saisie */
+    input, select {
+      margin: 10px;
+      padding: 10px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    /* Style du bouton de soumission */
+    button {
+      padding: 10px 20px;
+      background-color: #552304; 
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    /* Effet au survol du bouton */
+    button:hover {
+      background-color: #e67300;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Titre principal de la page -->
+  <h1>Réserver une table</h1>
+
+  <!-- Formulaire de réservation -->
+  <form id="reservationForm">
+    
+    <input type="text" id="nom" placeholder="Votre nom" required>
+
+   
+    <input type="email" id="email" placeholder="Votre email" required>
+
+    <input type="date" id="date" required>
+
+  
+    <input type="time" id="heure" required>
+
+   
+    <input type="number" id="personnes" placeholder="Nombre de personnes" required>
+
+    
+    <button type="submit">Réserver</button>
+  </form>
+
+  <!-- Script JavaScript pour gérer la soumission du formulaire -->
+  <script>
+    
+    document.getElementById("reservationForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Empêche le rechargement de la page
+
+      // Récupération des valeurs du formulaire
+      const nom = document.getElementById("nom").value;
+      const email = document.getElementById("email").value;
+      const date = document.getElementById("date").value;
+      const heure = document.getElementById("heure").value;
+      const personnes = document.getElementById("personnes").value;
+
+      // Création d'un objet de réservation
+      const reservation = { nom, email, date, heure, personnes };
+
+      // Sauvegarde temporaire des données dans localStorage
+      localStorage.setItem("reservation", JSON.stringify(reservation));
+
+      // Redirection vers la page de confirmation
+      window.location.href = "confirmation.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+surveillance <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de Suivi des Compétences</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://thumbs.dreamstime.com/z/waiter-restaurant-serving-customers-vector-illustration-33416698.jpg');
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 0;
+            background-color: #8B4513;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        #dateTime {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #fff;
+        }
+
+        .form-section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #8B4513;
+            color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 500px;
+            border: 2px solid #8B4513;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        button {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border: 2px solid #8B4513;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #FF8C00;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF4500;
+            border-color: #8B4513;
+            transform: scale(1.05);
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #F4A300;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #8B4513;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #fff;
+            text-align: center;
+        }
+
+        th {
+            background-color: #8B4513;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Système de Gestion des Compétences</h1>
+        <button onclick="window.location.href='index.html'">🏠 Retour à l'Accueil</button>
+        <button onclick="window.location.href='info.html'">📑 Informations sur les Employés</button>
+        <div id="dateTime"></div>
+    </header>
+
+    <section class="form-section">
+        <form id="competenceForm">
+            <label for="name">Nom de l'employé :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="competence">Poste :</label>
+            <input type="text" id="competence" name="competence" required>
+
+            <label for="hours">Heures travaillées aujourd'hui :</label>
+            <input type="number" id="hours" name="hours" min="0" required>
+
+            <label for="recette">Recette aujourd'hui ($) :</label>
+            <input type="number" id="recette" name="recette" min="0" required> 
+
+            <button type="submit">Ajouter</button>
+            <button type="button" onclick="modifierEmploye('123')">Modifier</button>
+
+        </form>
+    </section>
+
+    <section>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Compétence</th>
+                    <th>Évolution</th>
+                    <th>Niveau</th>
+                    <th>Date/Heure</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="competenceTableBody"></tbody>
+        </table>
+    </section>
+
+    <script>
+        const form = document.getElementById('competenceForm');
+        const tableBody = document.getElementById('competenceTableBody');
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const name = document.getElementById('name').value;
+            const competence = document.getElementById('competence').value;
+            const hours = parseFloat(document.getElementById('hours').value);
+            const recette = parseFloat(document.getElementById('recette').value);
+            const dateTime = new Date().toLocaleString();
+    
+            // Calcul du score de performance
+            let score = recette / hours;
+            score = score.toFixed(2); // pour garder 2 décimales
+    
+            // Définir le niveau automatiquement à partir du score
+            let level, evolution;
+            if (score < 30) {
+                level = 1;
+                evolution = '🔴 Faible';
+            } else if (score < 50) {
+                level = 2;
+                evolution = '🟠 Moyen';
+            } else if (score < 70) {
+                level = 3;
+                evolution = '🟢 Bon';
+            } else {
+                level = 4;
+                evolution = '🔵 Excellent';
+            }
+    
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${name}</td>
+                <td>${competence}</td>
+                <td>${evolution} (${score} $/h)</td>
+                <td>${level}</td>
+                <td>${dateTime}</td>
+                <td><button class="deleteButton">Supprimer</button></td>
+        
+
+            `;
+    
+            tableBody.appendChild(newRow);
+            form.reset();
+
+            const storedData = JSON.parse(localStorage.getItem('employees')) || [];
+            storedData.push({ name, competence, hours, recette, score, evolution, level, dateTime });
+
+            localStorage.setItem('employees', JSON.stringify(storedData));
+
+        });
+    
+        tableBody.addEventListener('click', function(event) {
+            if (event.target.classList.contains('deleteButton')) {
+                event.target.closest('tr').remove();
+            }
+        });
+    </script>

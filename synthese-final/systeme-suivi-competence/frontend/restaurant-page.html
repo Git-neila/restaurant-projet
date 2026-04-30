@@ -1,0 +1,261 @@
+<!DOCTYPE html>  
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant RO&OR</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Style général de la page */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Image de fond pour la page du haut  */
+        .restaurant-page {
+            background: url('https://th.bing.com/th/id/OIP.7E1rPeYJTvAfY_PwT4x8pwHaFG?w=2000&h=1377&rs=1&pid=ImgDetMain') no-repeat center center/cover;
+        }
+
+        /* Barre du haut avec contact/langue */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Barre de navigation principale */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: black;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Bouton de réservation rapide (menu supérieur) */
+        .book-table {
+            background: rgb(162, 5, 5);
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Section principale de la mise en page de bienvenue  */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            background: url('https://img.freepik.com/photos-premium/vie-nocturne-ville-bar-illumine-chaise-exterieur-lanterne-bois-architecture-moderne-generee-par-ia_188544-154553.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .hero-buttons button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-btn {
+            background: white;
+            color: black;
+        }
+
+        .table-btn {
+            background: rgb(255, 55, 0);
+        }
+
+        .login-btn {
+            background: #f2664d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* forme de Bloc d'options de réservation */
+        #reservation-options {
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .option {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .option button {
+            background-color: gold;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .option button:hover {
+            background-color: yellow;
+        }
+
+        /* Section pour la forme des commentaires des clients */
+        #comments {
+            padding: 50px 20px;
+        }
+
+        .comments-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .comment {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #f2664d;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="restaurant-page">
+
+    <!-- information du restaurant -->
+    <header>
+        <div class="top-bar">
+            <span>contact@example.com</span>
+            <span>+1 5589 55488 55</span>
+            <span class="lang">Fr / En</span>
+        </div>
+        <nav class="navbar">
+            <div class="logo">Restaurant RO&OR</div>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a>
+
+                <!-- Lien vers la page de connexion du gestionnaire -->
+                <li><a href="connexion.html"><button class="login-btn">Se connecter</button></a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section d'accueil principale avec options -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue au <span class="highlight">❤️ Restaurant RO&OR ❤️</span></h1>
+            <div class="hero-buttons">
+
+                <!-- Bouton conduisant vers le menu du restaurant -->
+                <a href="menu.html"><button class="menu-btn">MENU</button></a>
+
+
+                <!-- Bouton pour afficher les options de réservation -->
+                <button class="table-btn" id="reservation-btn">😊 RESERVATION 😊</button>
+
+
+                <!-- Section cachée contenant les différentes options de réservation pour que lorsqu`on clique sur le boutton reserver il affiche toutes ses options -->
+                <div id="reservation-options" style="display: none;">
+                    <h2>Choisissez votre option de réservation</h2>
+
+                    <div class="option">
+                        <h3>Réservation pour un dîner</h3>
+                        <p>Réservez une table pour un dîner romantique ou en famille.</p>
+                        <button onclick="window.location.href='reservation.html'">Réserver</button>
+                    </div>
+
+                    <div class="option">
+                        <h3>Réservation pour un événement spécial</h3>
+                        <p>Planifiez votre événement avec nous.</p>
+                        <button onclick="window.location.href='reservation.html'">Réserver</button>
+                    </div>
+
+                    <div class="option">
+                        <h3>Réservation de groupe</h3>
+                        <p>Réservez une table pour un groupe de plus de 6 personnes.</p>
+                        <button onclick="window.location.href='reservation.html'">Réserver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section des commentaires venant des clients -->
+    <section id="comments">
+        <div class="comments-container">
+            <h2>❤️ Commentaires ❤️</h2>
+
+            <div class="comment">
+                <h3>Yvanelle K.</h3>
+                <p>"Le repas était délicieux, l'ambiance agréable. Je reviendrai sans hésiter !"</p>
+            </div>
+
+            <div class="comment">
+                <h3>JeanPierre E.</h3>
+                <p>"Service impeccable et cadre magnifique. Je recommande vivement!"</p>
+            </div>
+
+            <div class="comment">
+                <h3>Nathan M.</h3>
+                <p>"Un excellent repas avec des saveurs surprenantes. Très bonne expérience!"</p>
+            </div>
+
+            <div class="comment">
+                <h3>Brandon B.</h3>
+                <p>"La qualité des produits était incroyable. Un véritable régal pour les papilles!"</p>
+            </div>
+
+            <div class="comment">
+                <h3>Kevin K.</h3>
+                <p>"Très bon service, le personnel était sympathique. L'endroit est parfait pour un dîner en famille."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script JS pour afficher/cacher la section de réservation -->
+    <script>
+        document.getElementById('reservation-btn').addEventListener('click', function() {
+            var reservationSection = document.getElementById('reservation-options');
+            reservationSection.style.display = reservationSection.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+
+</body>
+</html>

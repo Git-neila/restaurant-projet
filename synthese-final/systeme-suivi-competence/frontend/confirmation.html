@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmation de Réservation</title>
+
+  <!-- Style CSS pour la mise en forme -->
+  <style>
+    /* Style général du corps de la page */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f57c86; 
+      text-align: center;
+      padding: 50px;
+    }
+
+    /* Boîte contenant le message de confirmation */
+    .confirmation-box {
+      background-color: #ffe4c4; 
+      padding: 30px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #8B4513;
+    }
+
+
+    p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+ 
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #e35c82; 
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+  
+    button:hover {
+      background-color: #e67300; 
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Boîte principale de confirmation -->
+  <div class="confirmation-box">
+    <h2>🎉 Réservation confirmée !</h2>
+    <p id="details"></p> 
+
+    <!-- Bouton de retour vers la page principale du restaurant -->
+    <button onclick="window.location.href='restaurant-page.html'">Retour</button>
+  </div>
+
+  <!-- Zone destinée à afficher dynamiquement les détails de la réservation -->
+  <div id="confirmation-message"></div>
+
+  <!-- Script JavaScript pour afficher les détails de la réservation -->
+  <script>
+    // Récupère les données de réservation depuis le localStorage
+    const data = JSON.parse(localStorage.getItem("reservation"));
+    const zone = document.getElementById("confirmation-message");
+
+    // Si une réservation est trouvée, on affiche les informations à l'utilisateur
+    if (data) {
+      zone.innerHTML = `
+        <h2>Réservation confirmée !</h2>
+        <p>Merci <strong>${data.nom}</strong> pour votre réservation.</p>
+        <p>Date : ${data.date}, Heure : ${data.heure}</p>
+        <p>Nombre de personnes : ${data.personnes}</p>
+      `;
+    } else {
+      // Si aucune donnée n'est trouvée, afficher un message par défaut
+      zone.innerHTML = "<p>Aucune réservation trouvée.</p>";
+    }
+  </script>
+
+</body>
+</html>

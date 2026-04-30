@@ -1,0 +1,206 @@
+<!DOCTYPE html>   
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue - Système de Suivi des Compétences</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Fond d'écran de restaurant */
+        body.accueil {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-image: url('https://thevendry.com/cdn-cgi/image/height=1920,width=1920,fit=contain,metadata=none/https://s3.us-east-1.amazonaws.com/uploads.thevendry.co/23049/1672755654431_claim.jpg'); /* Fond d'écran restaurant */
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* En-tête */
+        header {
+            background-color: rgba(139, 69, 19, 0.8); 
+            color: white;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 10%;
+            background-color: rgba(210, 180, 140, 0.7);
+            border-radius: 15px;
+            width: 90%;
+            margin-top: 20px;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text h2 {
+            font-size: 2.5em;
+            color: #8B4513;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: #A0522D; 
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #8B4513;
+            transform: scale(1.05);
+        }
+
+        .hero-image img {
+            width: 20%;
+            border-radius: 10px;
+        }
+
+       
+        .features {
+            background-color: rgba(245, 222, 179, 0.8); 
+            padding: 40px 10%;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 15px;
+        }
+
+        .features h2 {
+            font-size: 2em;
+            color: #8B4513;
+            margin-bottom: 30px;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            width: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+     
+        .feature img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #8B4513;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 30px;
+            }
+            .hero-image img {
+                width: 20%;
+                margin-top: 10px;
+            }
+            .features-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body class="accueil">
+
+    
+    <header>
+        <h1>Bienvenue dans le Système de Suivi des Compétences</h1>
+  
+
+    </header>
+
+    
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                
+                <p>Suivez, évaluez et améliorez les compétences des employés grâce à notre plateforme intuitive.</p>
+                <a href="surveillance.html" class="btn">🔍 Accéder à la Surveillance</a>
+                <a href="information.html" class="btn secondary">ℹ En savoir plus</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://static-00.iconduck.com/assets.00/cook-icon-1024x1024-4113wkpf.png" alt=" cuisine">
+            </div>
+        </section>
+
+        <!-- Section des fonctionnalités -->
+        <section class="features">
+            <h2>Pourquoi utiliser ce système ?</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <img src="https://thumbs.dreamstime.com/z/symbole-de-l-ic%C3%B4ne-comp%C3%A9tence-signe-cr%C3%A9atif-la-collection-d-ic%C3%B4nes-gestion-entreprise-%C3%A0-plat-remplie-pour-ordinateur-et-153310699.jpg" alt="Icône suivi">
+                    <h3>Suivi des compétences</h3>
+                    <p>Gérez facilement les compétences et leur évolution.</p>
+                </div>
+                <div class="feature">
+                    <img src="https://th.bing.com/th/id/OIP.ExAeo5dEQMEOaWLu8G7FUwHaHa?rs=1&pid=ImgDetMain" alt="Icône performance">
+                    <h3>Évaluation simplifiée</h3>
+                    <p>Analysez la progression et les performances en un clin d'œil.</p>
+                </div>
+                <div class="feature">
+                    <img src="https://static.vecteezy.com/ti/vecteur-libre/p3/3374528-management-icon-with-gears-line-vectoriel.jpg" alt="Icône gestion">
+                    <h3>Gestion des dossiers</h3>
+                    <p>Centralisez toutes les informations des employés en un seul endroit.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer>
+        <p>&copy; 2025 Système de Suivi des Compétences. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html> 

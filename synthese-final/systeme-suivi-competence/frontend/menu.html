@@ -1,0 +1,176 @@
+menu<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Menu - Restaurant RO&OR</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('menu-background.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .menu-item {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .menu-item h3 {
+            margin: 10px 0 5px;
+        }
+
+        .menu-item p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Nous proposons beaucoup de plats, voici quelques-uns :</h1>
+
+    <div class="menu-grid">
+        <div class="menu-item">
+            <img src="https://images.ricardocuisine.com/services/recipes/pizza-1498148703.jpg" alt="Plat 1">
+            <h3>Pizza Margherita</h3>
+            <p>Tomates, mozzarella, basilic.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://bing.com/th?id=OSK.18e7531406785c7152264dbbc6737922" alt="Plat 2">
+            <h3>Pâtes Carbonara</h3>
+            <p>Crème, lardons, parmesan.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://simply-delicious-food.com/wp-content/uploads/2020/09/Steak-au-Poivre-6.jpg" alt="Plat 3">
+            <h3>Steak Frites</h3>
+            <p>Entrecôte grillée, frites maison.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://th.bing.com/th/id/R.ad07f44708202539da11114e95881676?rik=I%2bEjsGCc%2bxlYyA&riu=http%3a%2f%2fwww.bistrolaurelhardy.ca%2fwp-content%2fuploads%2f2020%2f10%2f218421941_4483997334967855_4060917713318837108_n-768x768.jpg&ehk=WR9CUGRgIbd0tgGZV1rxZPdvr9YR0f7yKhgU2wH5iAw%3d&risl=&pid=ImgRaw&r=0" alt="Plat 4">
+            <h3>Salade César</h3>
+            <p>Poulet, parmesan, sauce césar.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://bing.com/th?id=OSK.5d5785bfcf91e65d75defdc4b6c6c612" alt="Plat 5">
+            <h3>Risotto aux Champignons</h3>
+            <p>Riz Arborio, champignons, parmesan.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://2.bp.blogspot.com/-giq_lAUbYqs/XDt8_WVEWsI/AAAAAAAAAEc/PS2DjF-t_o4dqx5bgJmyd6D5I-vPhcsmgCLcBGAs/s1600/1101-2019-105587957054098042335.jpeg" alt="Plat 6">
+            <h3>Hamburger Maison</h3>
+            <p>Bœuf, cheddar, sauce spéciale.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://depozitulderetete.ro/wp-content/uploads/2017/07/ciorba-de-peste-2.jpg" alt="Plat 7">
+            <h3>Soupe de Poissons</h3>
+            <p>Fruits de mer, épices.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://static.wixstatic.com/media/728715_b27d43ed666f41b2ad62b1df86b4ca1c~mv2.jpg/v1/fill/w_1000,h_712,al_c,q_90,usm_0.66_1.00_0.01/728715_b27d43ed666f41b2ad62b1df86b4ca1c~mv2.jpg" alt="Plat 8">
+            <h3>Rôti de Bœuf</h3>
+            <p>Accompagné de légumes grillés.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://photos.bigoven.com/recipe/hero/potatogratin.jpg?h=500&w=500" alt="Plat 9">
+            <h3>Gratin Dauphinois</h3>
+            <p>Pommes de terre, crème, fromage.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://bing.com/th?id=OSK.6c1294652c0644c61b51f84e4fa3caff" alt="Plat 10">
+            <h3>Tartare de Saumon</h3>
+            <p>Saumon frais, avocat, citron.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://sunandgreen.fr/wp-content/uploads/2019/10/poulet_au_curry_et_oignons_recette_epices-768x768.jpg" alt="Plat 11">
+            <h3>Curry de Poulet</h3>
+            <p>Poulet, lait de coco, épices.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://bing.com/th?id=OSK.98231eb039ede14aa3ce4f03163ae2ba" alt="Plat 12">
+            <h3>Tagliatelles aux Truffes</h3>
+            <p>Pâtes fraîches, sauce crémeuse.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://img-3.journaldesfemmes.fr/lMgrcP9e4S4G7YblrJWEC2CVJQU=/910x607/smart/ad2166f861b94da7908c97ecbb5c42f7/ccmcms-jdf/20319903.jpg" alt="Plat 13">
+            <h3>Foie Gras</h3>
+            <p>Toast et chutney de figues.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://assets.afcdn.com/recipe/20191129/103149_w2048h1536c1cx2050cy3599.jpg" alt="Plat 14">
+            <h3>Paella</h3>
+            <p>Riz safrané, fruits de mer.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://cache.marieclaire.fr/data/photo/w800_c17/cuisine/10e/fotolia_44769534_subscription_monthly_xxl.jpg" alt="Plat 15">
+            <h3>Canard à l'Orange</h3>
+            <p>Magret de canard, sauce orange.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://allofoodtruck.fr/wp-content/uploads/2020/05/Depositphotos_70483885_xl-2015-1-scaled.jpg" alt="Plat 16">
+            <h3>Moules Frites</h3>
+            <p>Moules marinières, frites.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://natashaskitchen.com/wp-content/uploads/2019/11/Classic-Quiche-Lorraine-Recipe-Beautiful-flaky-pastry-crust-is-paired-with-a-delicious-savory-egg-custard.-Perfect-for-breakfast-or-brunch.-1-4.jpg" alt="Plat 17">
+            <h3>Quiche Lorraine</h3>
+            <p>Pâte brisée, lardons, œufs.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://assets.afcdn.com/recipe/20140812/22701_w1024h768c1cx1881cy1325.jpg" alt="Plat 18">
+            <h3>Gaspacho</h3>
+            <p>Soupe froide de tomates.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://essenrezept.de/wp-content/uploads/2021/02/Klassische-Lasagne-1-1024x683.jpeg" alt="Plat 19">
+            <h3>Lasagnes</h3>
+            <p>Pâtes, sauce tomate, fromage.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://www.parisperfect.com/blog/wp-content/uploads/2017/11/FO-156263555-creme-brulee-spoon.jpg" alt="Plat 20">
+            <h3>Crème Brûlée</h3>
+            <p>Dessert à la vanille caramélisé.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://kitchenswagger.com/wp-content/uploads/2020/07/mojito-recipe1.jpg" alt="Boisson 1">
+            <h3>Mojito</h3>
+            <p>Rhum, menthe, citron vert, eau gazeuse.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://static.vecteezy.com/system/resources/previews/030/284/923/large_2x/an-orange-juice-and-a-glass-of-juice-ai-generated-free-photo.jpg" alt="Boisson 2">
+            <h3>Jus d'Orange Frais</h3>
+            <p>Oranges pressées, servi frais.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://bakedbree.com/wp-content/uploads/2023/07/A_pina-colada-cocktail-Feature_1-scaled.jpg" alt="Boisson 3">
+            <h3>pinacolada</h3>
+            <p>Rhum, ananas, lait de coco.</p>
+        </div>
+    </div>
+
+</body>
+</html>
